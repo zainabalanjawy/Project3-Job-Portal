@@ -7,9 +7,14 @@ const passport = require('./lib/passportConfig')
 
 // Import our Routes
 const indexRoute = require('./routes/index')
+
+const ProviderPostRoute = require ('./routes/provider/post')
+const SeekerPostRoute = require('./routes/seeker/post')
+
 const providerRoute = require('./routes/provider/auth')
 const seekerRoute = require('./routes/seeker/auth')
 const authRoute = require('./routes/auth')
+
 
 
 //Initialise our app
@@ -44,9 +49,15 @@ app.use(function(req, res, next){
 
 // Mount our Routes
 app.use('/', indexRoute)
+
+app.use('/', ProviderPostRoute)
+app.use('/',SeekerPostRoute)
+
+
 app.use('/', providerRoute)
 app.use('/', seekerRoute)
 app.use('/', authRoute)
+
 
 
 app.listen(PORT, () => {
