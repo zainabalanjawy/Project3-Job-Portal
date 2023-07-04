@@ -59,6 +59,8 @@ app.use('/',SeekerPostRoute)
 app.use('/', providerRoute)
 app.use('/', seekerRoute)
 app.use('/', authRoute)
+app.use('/',appProviderRoute)
+app.use('/',appSeekerRoute)
 
 
 

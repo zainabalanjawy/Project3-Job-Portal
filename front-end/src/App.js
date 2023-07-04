@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Navigate, Route , Routes, Link } from 'react-rou
 import SignUpSeeker from './components/seeker/Signup'
 import SignUpProvider from './components/provider/Signup'
 import Signin from './components/user/Signin'
-
+import AppSeeker from './components/seeker/App'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
@@ -87,10 +87,12 @@ export default function App() {
           <nav>
              <div>
              <Link to="/logout" onClick={logoutHandler}>Logout</Link> &nbsp;
+             <Link to="/seeker/app" >seeker App</Link> &nbsp;
              </div>
            </nav>
           <Routes>
             {user.user.id}
+            <Route path='/seeker/app' element={<AppSeeker/>}/>
           </Routes>
          </Router>
       </>
