@@ -8,6 +8,15 @@ import AppSeeker from './components/seeker/App'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
+import Home from './components/seeker/Home'
+import Details from './components/seeker/Details'
+
+
+
+import Profile from './components/seeker/Profile'
+import Details from './components/provider/details'
+
+
 
 export default function App() {
   const [isAuth, setIsAuth] = useState(false)
@@ -87,12 +96,28 @@ export default function App() {
           <nav>
              <div>
              <Link to="/logout" onClick={logoutHandler}>Logout</Link> &nbsp;
+
+            <Link to="/seeker/home" >Seeker Home</Link> &nbsp;
+             <Link to="/seeker/post/details">Details</Link> &nbsp;
+
              <Link to="/seeker/app" >seeker App</Link> &nbsp;
+             <Link to="/seeker/profile" >seeker Profile</Link> &nbsp;
+             <Link to="/provider/details" >provider Details</Link> &nbsp;
+
              </div>
            </nav>
           <Routes>
-        
+
+            {user.user.id}
+
+            <Route path='/seeker/home' element={<Home/>}/>
+            <Route path='/seeker/post/details' element={<Details/>}/>
+
+
             <Route path='/seeker/app' element={<AppSeeker/>}/>
+            <Route path='/seeker/profile' element={<Profile/>}/>
+            <Route path='/provider/details' element={<details/>}/>
+
           </Routes>
          </Router>
 
