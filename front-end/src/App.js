@@ -7,6 +7,10 @@ import Signin from './components/user/Signin'
 
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
+import Home from './components/seeker/Home'
+import Details from './components/seeker/Details'
+
+
 
 
 export default function App() {
@@ -87,10 +91,14 @@ export default function App() {
           <nav>
              <div>
              <Link to="/logout" onClick={logoutHandler}>Logout</Link> &nbsp;
+             <Link to="/seeker/home" >Seeker Home</Link> &nbsp;
+             <Link to="/seeker/post/details">Details</Link> &nbsp;
              </div>
            </nav>
           <Routes>
             {user.user.id}
+            <Route path='/seeker/home' element={<Home/>}/>
+            <Route path='/seeker/post/details' element={<Details/>}/>
           </Routes>
          </Router>
       </>
