@@ -91,10 +91,12 @@ export default function App() {
              </div>
            </nav>
           <Routes>
-            {user.user.id}
+        
             <Route path='/seeker/app' element={<AppSeeker/>}/>
           </Routes>
          </Router>
+
+         {user.user.id}
       </>
     )
   }
