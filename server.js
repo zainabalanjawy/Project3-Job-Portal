@@ -7,6 +7,8 @@ const passport = require('./lib/passportConfig')
 
 // Import our Routes
 const indexRoute = require('./routes/index')
+const appProviderRoute = require('./routes/provider/App')
+const appSeekerRoute = require('./routes/seeker/App')
 
 
 //Initialise our app
