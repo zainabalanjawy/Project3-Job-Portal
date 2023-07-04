@@ -20,28 +20,46 @@ export default function Signin(props) {
     }
 
     //Function to login as  user 
-    const loginHandler = () =>{
+    const loginHandler = (e) =>{
+        // e.preventDefult()
         props.login(newUser)
     }
 
-
-  return (
+    return (
     <>
-    <h1>Signin</h1>
-    <Container>
+    <section>
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+        <h3 class="text-center">Signin</h3>
+        <form role="form" id="contact-form" method="post" autocomplete="off">
+          <div class="card-body">
+            <div class="mb-4">
+              <div class="input-group input-group-dynamic">
+                <label class="form-label">Email Address</label>
+                <input type="email"  onChange={changeHandler} name="emailAddress" class="form-control"/>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="input-group input-group-dynamic">
+                <label class="form-label">Password</label>
+                <input type="password"  onChange={changeHandler} name="password" class="form-control"/>
+              </div>
+            </div>
 
-        <Form.Group>
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control onChange={changeHandler} name="emailAddress"></Form.Control>
-        </Form.Group>
+            <div class="row">
+              <div class="col-md-12">
+                <input onClick={loginHandler} class="btn bg-gradient-primary w-100 primary" type="Signin"/>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <Form.Group>
-            <Form.Label>Password</Form.Label>
-            <Form.Control  onChange={changeHandler} name="password" type="password"></Form.Control>
-        </Form.Group>
-
-        <Button onClick={loginHandler} variant="primary">Login</Button>
-    </Container>
     </>
   )
 }
+

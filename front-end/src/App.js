@@ -107,10 +107,12 @@ export default function App() {
              </div>
            </nav>
           <Routes>
+
             {user.user.id}
 
             <Route path='/seeker/home' element={<Home/>}/>
             <Route path='/seeker/post/details' element={<Details/>}/>
+
 
             <Route path='/seeker/app' element={<AppSeeker/>}/>
             <Route path='/seeker/profile' element={<Profile/>}/>
@@ -118,6 +120,8 @@ export default function App() {
 
           </Routes>
          </Router>
+
+         {user.user.id}
       </>
     )
   }
