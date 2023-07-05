@@ -5,6 +5,7 @@ import SignUpSeeker from './components/seeker/Signup'
 import SignUpProvider from './components/provider/Signup'
 import Signin from './components/user/Signin'
 import AppSeeker from './components/seeker/App'
+import AppProvider from './components/provider/App'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
@@ -88,11 +89,14 @@ export default function App() {
              <div>
              <Link to="/logout" onClick={logoutHandler}>Logout</Link> &nbsp;
              <Link to="/seeker/app" >seeker App</Link> &nbsp;
+             <Link to="/provider/app" >provider App</Link> &nbsp;
+
              </div>
            </nav>
           <Routes>
             {user.user.id}
             <Route path='/seeker/app' element={<AppSeeker/>}/>
+            <Route path='/provider/app'element={< AppProvider />}  />
           </Routes>
          </Router>
       </>
