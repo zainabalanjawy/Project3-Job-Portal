@@ -9,7 +9,11 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
 import Home from './components/seeker/Home'
-import Details from './components/seeker/Details'
+import SeekerDetails from './components/seeker/Details'
+
+import ProviderHome from './components/provider/Home'
+import ProviderEditPost from './components/provider/EditPost'
+import ProviderAddPost from './components/provider/AddPost'
 
 
 
@@ -87,6 +91,18 @@ export default function App() {
   
   }
 
+  //Function to login as  user 
+  const addPostHandler = (credintals) =>{
+    axios.post("/provider/post/add", credintals)
+    .then(res=>{
+      console.log(res.data);
+    }
+    )
+ 
+    .catch(e=>{console.log(e.message);})
+}
+
+
   if(isAuth)
   {
     return (
@@ -102,8 +118,12 @@ export default function App() {
 
              <Link to="/seeker/app" >seeker App</Link> &nbsp;
              <Link to="/seeker/profile" >seeker Profile</Link> &nbsp;
-             <Link to="/provider/details" >provider Details</Link> &nbsp;
-
+             <tr></tr>
+             <Link to="/provider/details" >Provider Details</Link> &nbsp;
+             
+             <Link to="/provider/home" >Provider Home</Link> &nbsp;
+             <Link to="/provider/post/add" >Provider Add Post</Link> &nbsp;
+             <Link to="/provider/post/edit" >Provider Edit Post</Link> &nbsp;
              </div>
            </nav>
           <Routes>
@@ -111,12 +131,15 @@ export default function App() {
             {user.user.id}
 
             <Route path='/seeker/home' element={<Home/>}/>
-            <Route path='/seeker/post/details' element={<Details/>}/>
-
-
+            <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
             <Route path='/seeker/app' element={<AppSeeker/>}/>
             <Route path='/seeker/profile' element={<Profile/>}/>
-            <Route path='/provider/details' element={<details/>}/>
+            
+
+            <Route path='/provider/details' element={<Details/>}/>
+            <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
+            <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>
+            <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
 
           </Routes>
          </Router>

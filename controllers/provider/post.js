@@ -1,14 +1,15 @@
 const Post = require('../../models/Post')
 
-// exports.add_provider_get_post = async(req,body)=>{
-//     res.render('post/add')
-//     // try {
-//     //     const posts = await Post.find()
-//     //     res.render('/provider/post', {posts})
-//     // } catch (error) {
-//     //     console.log(error.message)
-//     // }
-// }
+exports.provider_post_view= async (req,res) => {
+    try {
+        console.log(req.query.id);
+        const posts = await Post.find({ Provider: [req.query.id] })
+        console.log(posts)
+        res.status(200).json(posts)
+    } catch (err) {
+        console.log('An error occured:' + err.message)
+    }
+}
 
 exports.add_provider_post = (req,res) => {
     const post = new Post(req.body)
