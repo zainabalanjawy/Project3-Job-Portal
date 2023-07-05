@@ -17,7 +17,8 @@ const providerRoute = require('./routes/provider/auth')
 const seekerRoute = require('./routes/seeker/auth')
 const authRoute = require('./routes/auth')
 
-
+const providerDetailsRoute = require ('./routes/provider/Details')
+const SeekerProfileRoute = require('./routes/seeker/Profile')
 
 //Initialise our app
 const app = express()
@@ -61,7 +62,8 @@ app.use('/', seekerRoute)
 app.use('/', authRoute)
 app.use('/',appProviderRoute)
 app.use('/',appSeekerRoute)
-
+app.use('/',providerDetailsRoute)
+app.use('/',SeekerProfileRoute)
 
 
 app.listen(PORT, () => {
