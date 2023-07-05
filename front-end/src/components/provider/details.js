@@ -11,16 +11,16 @@ export default function App() {
       <h1>Details</h1>
      <form enctype="multipart/form-data"> 
    <div> 
-<label>About</label>
-<input type='text' name="About" ></input>
-   </div>
-<div>
-<label>Location</label>
-<input type="text" name="Location"></input>
-</div>
+    <label>About</label>
+    <input type='text' name="About" ></input>
+      </div>
+    <div>
+    <label>Location</label>
+    <input type="text" name="Location"></input>
+    </div>
 
 
-<button>Edit </button>
+    <button>Edit </button>
      </form>
       
     </>

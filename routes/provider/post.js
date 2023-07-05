@@ -13,4 +13,8 @@ router.post('/provider/post/edit', ProviderPostController.edit_provider_post)
 // post/delete
 router.post('/provider/post/delete', ProviderPostController.delete_provider_post)
 
+// post/home
+router.get('/provider/home', ProviderPostController.provider_post_view)
+
+
 module.exports = router
