@@ -7,7 +7,13 @@ const postSchema = mongoose.Schema({
     description: String,
     responsibilities: String,
     Salary: Number,
-    Location: String
+    Location: String,
+    Provider: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+      ],
 },{
     timestamps: true
 })

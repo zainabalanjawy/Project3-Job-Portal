@@ -22,7 +22,7 @@ const authRoute = require('./routes/auth')
 //Initialise our app
 const app = express()
 
-const PORT = 4000
+const PORT = 4006
 
 
 app.use(expressLayouts)
