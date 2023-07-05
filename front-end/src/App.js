@@ -5,6 +5,7 @@ import SignUpSeeker from './components/seeker/Signup'
 import SignUpProvider from './components/provider/Signup'
 import Signin from './components/user/Signin'
 import AppSeeker from './components/seeker/App'
+import AppProvider from './components/provider/App'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
@@ -117,13 +118,21 @@ export default function App() {
              <Link to="/seeker/post/details">Details</Link> &nbsp;
 
              <Link to="/seeker/app" >seeker App</Link> &nbsp;
+
+             <Link to="/provider/app" >provider App</Link> &nbsp;
+
              <Link to="/seeker/profile" >seeker Profile</Link> &nbsp;
+
              <tr></tr>
              <Link to="/provider/details" >Provider Details</Link> &nbsp;
              
              <Link to="/provider/home" >Provider Home</Link> &nbsp;
              <Link to="/provider/post/add" >Provider Add Post</Link> &nbsp;
              <Link to="/provider/post/edit" >Provider Edit Post</Link> &nbsp;
+
+             <Link to="/provider/details" >provider Details</Link> &nbsp;
+
+
              </div>
            </nav>
           <Routes>
@@ -133,6 +142,9 @@ export default function App() {
             <Route path='/seeker/home' element={<Home/>}/>
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
             <Route path='/seeker/app' element={<AppSeeker/>}/>
+
+            <Route path='/provider/app'element={< AppProvider />}  />
+
             <Route path='/seeker/profile' element={<Profile/>}/>
             
 
@@ -140,6 +152,7 @@ export default function App() {
             <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
             <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>
             <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
+
 
           </Routes>
          </Router>
