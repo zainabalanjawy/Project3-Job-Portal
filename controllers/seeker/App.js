@@ -1,7 +1,15 @@
 const Application = require('../../models/App')
+const Post = require('../../models/Post')
 exports.seeker_get_viwe = async(req,res)=>{
     try {
-        const app = await Application.find()
+        const app = await Application.find(
+           { user:[req.query.id]}
+
+        ).populate('post')
+        const post = await Post.findOne(
+            { _id:[app.post]}
+ 
+         )
         console.log(app)
         res.status(200).json(app)
     } catch (error) {
