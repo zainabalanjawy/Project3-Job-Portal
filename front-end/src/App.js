@@ -9,9 +9,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
 import Home from './components/seeker/Home'
-import Details from './components/seeker/Details'
-
-
+import DetailsSeeker from './components/seeker/Details'
 
 import Profile from './components/seeker/Profile'
 import Details from './components/provider/details'
@@ -110,7 +108,7 @@ export default function App() {
             {user.user.id}
 
             <Route path='/seeker/home' element={<Home/>}/>
-            <Route path='/seeker/post/details' element={<Details/>}/>
+            <Route path='/seeker/post/details' element={<DetailsSeeker/>}/>
 
             <Route path='/seeker/app' element={<AppSeeker/>}/>
             <Route path='/seeker/profile' element={<Profile/>}/>

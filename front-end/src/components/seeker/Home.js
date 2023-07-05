@@ -4,12 +4,14 @@ import {Form,Container, Row,Col,Button, Table,} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Details from './Details';
-import {BrowserRouter as Router,Navigate, Route , Routes, Link } from 'react-router-dom'
+import {BrowserRouter as Router,Navigate, Route , Routes, Link,useNavigate} from 'react-router-dom'
 
   
 
 export default function Home() {
     const element = <FontAwesomeIcon icon={faSearch} />
+    const navigate = useNavigate();
+
    
 
     const [posts, setPosts] = useState([])
@@ -28,15 +30,16 @@ export default function Home() {
     const allPosts = posts.map((post, index) => {
         return (
             <div key={index}>
-                <h4>{post.jobTitle}</h4>
+               <h4>{post.jobTitle}</h4>
                 <p>{post.Location}</p>
                 <p>{post.Salary}</p>
-                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={()=><Navigate to="/seeker/post/details" replace={true} post={post}/>}> 
+                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/seeker/post/details', {state: {post}})}>Details
            
                 {/* <Details post = {post}/> */}
                 
 
                 </button>
+
                 {/* <div className="App">
                     <table>
                         <tr>
