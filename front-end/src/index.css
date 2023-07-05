@@ -12,8 +12,19 @@ code {
     monospace;
 }
 
+.card {
+  width: 320px;
+  padding: 20px;
+  background-color: #f1f3f4;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;
+  
+}
+  
+
 
 .App {
+
 
 /* .App {
 

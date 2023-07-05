@@ -10,11 +10,15 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
 import Home from './components/seeker/Home'
+
+import DetailsSeeker from './components/seeker/Details'
+
 import SeekerDetails from './components/seeker/Details'
 
 import ProviderHome from './components/provider/Home'
 import ProviderEditPost from './components/provider/EditPost'
 import ProviderAddPost from './components/provider/AddPost'
+
 
 
 
@@ -140,7 +144,12 @@ export default function App() {
             {user.user.id}
 
             <Route path='/seeker/home' element={<Home/>}/>
+
+            <Route path='/seeker/post/details' element={<DetailsSeeker/>}/>
+
+
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
+
             <Route path='/seeker/app' element={<AppSeeker/>}/>
 
             <Route path='/provider/app'element={< AppProvider />}  />
