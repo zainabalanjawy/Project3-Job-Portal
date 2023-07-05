@@ -5,6 +5,7 @@ import SignUpSeeker from './components/seeker/Signup'
 import SignUpProvider from './components/provider/Signup'
 import Signin from './components/user/Signin'
 import AppSeeker from './components/seeker/App'
+import AppProvider from './components/provider/App'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
@@ -101,8 +102,12 @@ export default function App() {
              <Link to="/seeker/post/details">Details</Link> &nbsp;
 
              <Link to="/seeker/app" >seeker App</Link> &nbsp;
+
+             <Link to="/provider/app" >provider App</Link> &nbsp;
+
              <Link to="/seeker/profile" >seeker Profile</Link> &nbsp;
              <Link to="/provider/details" >provider Details</Link> &nbsp;
+
 
              </div>
            </nav>
@@ -115,8 +120,12 @@ export default function App() {
 
 
             <Route path='/seeker/app' element={<AppSeeker/>}/>
+
+            <Route path='/provider/app'element={< AppProvider />}  />
+
             <Route path='/seeker/profile' element={<Profile/>}/>
             <Route path='/provider/details' element={<details/>}/>
+
 
           </Routes>
          </Router>
