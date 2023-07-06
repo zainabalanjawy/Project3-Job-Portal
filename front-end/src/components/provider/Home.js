@@ -2,13 +2,17 @@ import axios, { all } from 'axios';
 import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+
 import {BrowserRouter as Router,Navigate, Route , Routes, Link ,useNavigate} from 'react-router-dom'
+
 
   
 
 export default function ProviderHome(props) {
     const element = <FontAwesomeIcon icon={faSearch} />
     const navigate = useNavigate();
+
 
     const [posts, setPosts] = useState([])
     const [inputValue, setInputValue] = useState('');
@@ -17,6 +21,17 @@ export default function ProviderHome(props) {
         getAllPosts()
     }, [])
 
+    const deleteHandler = async (id) => {
+        try {
+          const response = await axios.post(
+            `/provider/post/delete?id=${id}`
+          )
+        // console.log(posts.id)
+          console.log("deleted successfully!")
+        } catch (error) {
+          console.log("Something went wrong", error)
+        }
+      }
   
     const getAllPosts = async () => {
         const response = await axios.get(`/provider/home/?id=${props.id}`)
@@ -48,12 +63,15 @@ export default function ProviderHome(props) {
                 <h4>{post.jobTitle}</h4>
                 <p>{post.Location}</p>
                 <p>{post.Salary}</p>
-                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={()=><Navigate to="/seeker/post/details" replace={true} post={post}/>}> 
+                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={()=><Navigate to="/seeker/post/details" replace={true} post={post}/>}>Details</button>
+                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => deleteHandler(post._id)}>Delete</button>
+                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/post/edit', {state: {post}})}>Edit</button>
+
            
                 {/* <Details post = {post}/> */}
                 
 
-                </button>
+           
                 {/* <div className="App">
                     <table>
                         <tr>

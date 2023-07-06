@@ -315,6 +315,12 @@ export default function App() {
           {/* <link href="assets/css/material-kit.css?v=3.0.0" rel="stylesheet" /> */}
           </div>
 
+
+            <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
+            <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
+            
+            <Route path='/seeker/app' element={<AppSeeker/>}/>
+
           <body>
 
         <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
@@ -360,6 +366,7 @@ export default function App() {
               </Link>
               </Router>
             </li>
+
 
             <li class="nav-item ms-lg-auto my-auto ms-3 ms-lg-0 mt-2 mt-lg-0">
           <Router>
