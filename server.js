@@ -4,6 +4,23 @@ const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
 const passport = require('./lib/passportConfig')
 
+
+// Import our Routes
+const indexRoute = require('./routes/index')
+const appProviderRoute = require('./routes/provider/App')
+const appSeekerRoute = require('./routes/seeker/App')
+
+const ProviderPostRoute = require ('./routes/provider/post')
+const SeekerPostRoute = require('./routes/seeker/post')
+
+const providerRoute = require('./routes/provider/auth')
+const seekerRoute = require('./routes/seeker/auth')
+const authRoute = require('./routes/auth')
+
+const providerDetailsRoute = require ('./routes/provider/Details')
+const SeekerProfileRoute = require('./routes/seeker/Profile')
+
+
 //Initialise our app
 const app = express()
 app.use(express.json())
@@ -59,7 +76,8 @@ app.use('/', seekerRoute)
 app.use('/', authRoute)
 app.use('/',appProviderRoute)
 app.use('/',appSeekerRoute)
-
+app.use('/',providerDetailsRoute)
+app.use('/',SeekerProfileRoute)
 
 
 app.listen(PORT, () => {

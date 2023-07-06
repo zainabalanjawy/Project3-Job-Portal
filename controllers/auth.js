@@ -30,7 +30,8 @@ exports.signin_post = async (req,res)=>{
             //Payload
             const payload = {
                 user:{
-                    id:user.id
+                    id:user.id,
+                    type:user.type
                 }
             }
 
