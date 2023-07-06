@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import {BrowserRouter as Router,Navigate, Route , Routes, Link ,useNavigate} from 'react-router-dom'
 
 
 export default function AddPost(props) {
+  const navigate = useNavigate();
     //Set state for the post into new post
     const [newPost, setNewPost] = useState({});
 
@@ -22,6 +24,7 @@ export default function AddPost(props) {
     const addPostHandler = (e) =>{
         // e.preventDefult()
         props.addPost(newPost)
+        navigate('/provider/home')
     }
 
     return (
