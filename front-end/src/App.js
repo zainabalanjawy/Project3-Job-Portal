@@ -402,7 +402,7 @@ export default function App() {
             <Router>
           <Routes>
 
-            <Route path='/provider/app'element={< AppProvider />}  />
+            <Route path='/provider/app'element={< AppProvider id={user.user.id} />}  />
             <Route path='/Provider/details' element={<ProviderDetails/>}/>
             <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
             <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>

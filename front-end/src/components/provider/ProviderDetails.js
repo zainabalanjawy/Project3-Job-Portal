@@ -61,6 +61,7 @@ export default function ProviderDetails(props) {
 
    <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => deleteHandler(post._id)}>Delete</button>
    <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/post/edit', {state: {post}})}>Edit</button>
+   <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/app', {state: {post}})}>View Applicants</button>
    </form>
  
  </div>
