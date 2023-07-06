@@ -229,7 +229,7 @@ export default function App() {
             <Route path='/provider/app'element={<AppProvider />}  />
 
 
-            <Route path='/seeker/profile' element={<Profile/>}/>
+            <Route path='/seeker/profile' element={<Profile id={user.user.id}/>}/>
           </Routes>
           </Router>
           </h2>
@@ -398,7 +398,7 @@ export default function App() {
           <Routes>
 
             <Route path='/provider/app'element={< AppProvider />}  />
-            <Route path='/provider/details' element={<Details/>}/>
+            <Route path='/provider/details' element={<Details id={user.user.id}/>}/>
             <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
             <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>
             <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>

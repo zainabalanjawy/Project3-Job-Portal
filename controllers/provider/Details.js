@@ -12,12 +12,11 @@ exports.provider_post_details = (req,res) => {
             console.log('error has occured', err)
         })
 }
-exports.provider_get_details = (req,res) => {
-    Post.find()
-    .then((posts) => {
+exports.provider_get_details = async(req,res) => {
+    try{
+    const posts=await Post.find({user: [req.query.id]})
         res.status(200).json(posts)
-        })
-        .catch((err) => {
+    }catch(err){
             console.log('error has occured', err)
-            })
             }
+          }
