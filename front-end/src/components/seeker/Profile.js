@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Profile from '../../../../models/profile';
+//import Profile from '../../../../models/profile';
 
 export default function App(props) {
   const [newProfile, setNewProfile] = useState({});
