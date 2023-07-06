@@ -223,7 +223,11 @@ export default function App() {
 
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
 
-            <Route path='/seeker/app' element={<AppSeeker/>}/>
+            <Route path='/seeker/app' element={<AppSeeker id={user.user.id}/>}/>
+
+
+            <Route path='/provider/app'element={<AppProvider />}  />
+
 
             <Route path='/seeker/profile' element={<Profile/>}/>
           </Routes>
