@@ -2,25 +2,12 @@ const express = require('express')
 const mongoose = require('mongoose')
 const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
-const bodyParser = require('body-parser')
 const passport = require('./lib/passportConfig')
-
-// Import our Routes
-const indexRoute = require('./routes/index')
-const appProviderRoute = require('./routes/provider/App')
-const appSeekerRoute = require('./routes/seeker/App')
-
-const ProviderPostRoute = require ('./routes/provider/post')
-const SeekerPostRoute = require('./routes/seeker/post')
-
-const providerRoute = require('./routes/provider/auth')
-const seekerRoute = require('./routes/seeker/auth')
-const authRoute = require('./routes/auth')
-
-
 
 //Initialise our app
 const app = express()
+app.use(express.json())
+
 
 const PORT = 4006
 
@@ -30,7 +17,6 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
-app.use(bodyParser.json())
 app.use(express.urlencoded({
     extended: true
 }))
@@ -48,6 +34,18 @@ app.use(function(req, res, next){
     res.locals.currentUser = req.user
     next()
 })
+
+// Import our Routes
+const indexRoute = require('./routes/index')
+const appProviderRoute = require('./routes/provider/App')
+const appSeekerRoute = require('./routes/seeker/App')
+
+const ProviderPostRoute = require ('./routes/provider/post')
+const SeekerPostRoute = require('./routes/seeker/post')
+
+const providerRoute = require('./routes/provider/auth')
+const seekerRoute = require('./routes/seeker/auth')
+const authRoute = require('./routes/auth')
 
 // Mount our Routes
 app.use('/', indexRoute)

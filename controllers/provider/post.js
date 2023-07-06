@@ -48,7 +48,9 @@ exports.delete_provider_post = async(req,res)=> {
    
     exports.edit_provider_post = async(req,res) =>{
         try {
-            console.log(req.body.id)
+            console.log(req.body)
+            console.log(req.query)
+            console.log(req.params)
             const post= await Post.findByIdAndUpdate(req.body.id, req.body)
             res.status(204).json(post)
             // res.redirect('/post/edit')

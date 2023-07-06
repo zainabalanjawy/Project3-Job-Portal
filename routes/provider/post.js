@@ -2,6 +2,9 @@ const express = require('express')
 const router = express.Router()
 const ProviderPostController = require('../../controllers/provider/post')
 
+// router.use(express.json())
+
+
 // post/add 
 // router.get('/post/add', ProviderPostController.add_provider_get_post)
 router.post('/provider/post/add', ProviderPostController.add_provider_post)
