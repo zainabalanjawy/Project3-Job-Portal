@@ -8,13 +8,14 @@ import {BrowserRouter as Router,Navigate, Route , Routes, Link,useNavigate} from
 
   
 
-export default function Home() {
+export default function Home(props) {
     const element = <FontAwesomeIcon icon={faSearch} />
     const navigate = useNavigate();
 
    
 
     const [posts, setPosts] = useState([])
+    const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
         getAllPosts()
@@ -27,7 +28,25 @@ export default function Home() {
         setPosts(response.data)
     }
 
+    function handleInputChange(event) {
+        setInputValue(event.target.value);
+      }
+    
+      function handleSearch() {
+        if (inputValue.length > 0) {
+            console.log("input",inputValue);
+            const filtered_posts = posts.filter((p) => {
+            // console.log("p",p);
+            // console.log("posts",posts);
+            return p.jobTitle.match(inputValue);
+        });
+        setPosts(filtered_posts)
+        console.log(filtered_posts);
+        }
+        //props.onSearch(inputValue);
+      }
     const allPosts = posts.map((post, index) => {
+
         return (
             <div key={index}>
                <h4>{post.jobTitle}</h4>
@@ -67,7 +86,8 @@ export default function Home() {
         <div class="col-4 mx-auto">
             <div class="input-group input-group-dynamic mb-4">
       <span class="input-group-text">{element}</span>
-      <input class="form-control" placeholder="Search" type="text"/>
+      <input class="form-control" placeholder="Search" type="text"onChange={handleInputChange}/>
+      <button onClick={handleSearch}>Search</button>
     </div>
   </div>
 </div>
