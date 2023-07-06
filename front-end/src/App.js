@@ -17,13 +17,10 @@ import SeekerDetails from './components/seeker/Details'
 
 import ProviderHome from './components/provider/Home'
 import ProviderEditPost from './components/provider/EditPost'
+
 import ProviderAddPost from './components/provider/AddPost'
-
-
-
-
+import ProviderDetails from './components/provider/ProviderDetails'
 import Profile from './components/seeker/Profile'
-import Details from './components/provider/details'
 
 
 
@@ -317,7 +314,7 @@ export default function App() {
           <Router>
             <Routes>
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
-            <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
+            {/* <Route path='/provider/post/edit' element={<ProviderEditPost/>}/> */}
             
             <Route path='/seeker/app' element={<AppSeeker/>}/>
             </Routes>
@@ -406,7 +403,7 @@ export default function App() {
           <Routes>
 
             <Route path='/provider/app'element={< AppProvider />}  />
-            <Route path='/provider/details' element={<Details/>}/>
+            <Route path='/Provider/details' element={<ProviderDetails/>}/>
             <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
             <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>
             <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
