@@ -1,52 +1,23 @@
 import React, { Component } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import axios, { all } from 'axios';
 
-export default function Details() {
+export default function Details(props) {
     // const {post} = useParams()
     const {state} = useLocation()
     const {post} = state
-    // {post.map(post => <div>{post.jobTitle}</div>)}
-    /* const allPosts = props.id.map((post, index) => {
+   //const {id} = useParams();
+    const handleApply = async () => {
+     console.log(props.id);
+      const response = await axios.post(`/seeker/post/detailes?id=${props.id}`,{post})
+      console.log(response)
+  }
 
-}
-//         return (
-//             <div key={index}>
-//                 <button type="button" class="btn bg-gradient-primary btn-lg" > 
-//                 <h4>{post.jobTitle}</h4>
-//                 <p>{post.Location}</p>
-//                 <p>{post.Salary}</p>
-//                 </button>
-//                 {/* <div className="App">
-//                     <table>
-//                         <tr>
-//                             <th>Title</th>
-//                             <th>Location</th>
-//                             <th>Salary</th>
-//                         </tr>
-//                         <tr>
-//                             <td>{post.jobTitle}</td>
-//                             <td>{post.Location}</td>
-//                             <td>{post.Salary}</td>
-                      
-//                         </tr>
-//                     </table>
-//                 </div> */
-//             // </div>
-//         // )
-//     // })
 
     return(
         <>
          <h1>Details</h1>
-{/*        
-        {post.jobTitle}
-        {post.jobNature}
-        {post.requirement}
-        {post.description}
-        {post.responsibilities}
-        {post.Salary}
-        {post.Location} */}
-
+         
 <div class="card">
   <div class="card_header">
     <h3 class="card_header__title">{post.jobTitle}</h3>
@@ -71,7 +42,12 @@ export default function Details() {
     </div>
   </div>
   <div class="card_button">
-  <button type="button" class="btn bg-gradient-primary btn-lg" >Apply</button>
+    <form>
+      <input type="hidden" name="post" value={post._id}></input>
+      {/* <input type="hidden" name="user" value={props.id}></input> */}
+    <button type="button" class="btn bg-gradient-primary btn-lg" onClick={()=>{handleApply()}}>Apply</button>
+    </form>
+  
   </div>
 </div>
 </>

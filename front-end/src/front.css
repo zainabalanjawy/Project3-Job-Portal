@@ -142,7 +142,7 @@ h6,
   margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.2;
-  color: #344767;
+  color: #588061;
 }
 
 h1,
@@ -289,6 +289,12 @@ sup {
 }
 
 a {
+  color: var(--bs-link-color);
+  text-decoration: none;
+}
+
+
+Link {
   color: var(--bs-link-color);
   text-decoration: none;
 }
@@ -10229,8 +10235,8 @@ fieldset:disabled .btn {
 }
 
 .py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
 }
 
 .py-6 {
@@ -21240,12 +21246,12 @@ fieldset:disabled .btn {
 .author .name>span {
   line-height: 1.571;
   font-weight: 600;
-  font-size: 0.875rem;
-  color: #3A416F;
+  font-size: 1.8rem;
+  color: #869F77;
 }
 
 .author .stats {
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
@@ -22137,6 +22143,28 @@ body.dark-version {
   background-size: cover;
   background-position: 50%;
   background-image: url('https://media.istockphoto.com/id/1135486164/vector/watercolor-vector-banner-tropical-flowers-and-cacti-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=dn-4C0Hd_A6Gtst24ZKjZsVkF-l8INMvu9xNWVZYOtU=');
+}
+
+.page-header-seeker {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url('https://64.media.tumblr.com/d629418056076f381ddb3cc26983db4a/3d18fcbd5c6188ef-c1/s400x600/79a8ffad623db3d74ae565dde9e4c20bc2a6898c.gif');
+}
+
+.page-header-provider {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url('https://64.media.tumblr.com/d629418056076f381ddb3cc26983db4a/3d18fcbd5c6188ef-c1/s400x600/79a8ffad623db3d74ae565dde9e4c20bc2a6898c.gif');
 }
 
 .page-header .container {
@@ -26085,6 +26113,7 @@ p,
 .p {
   font-size: 1rem;
   font-weight: 400;
+  font-weight: bold;
   line-height: 1.6;
 }
 
@@ -26139,6 +26168,10 @@ a {
   color: #344767;
 }
 
+Link {
+  letter-spacing: 0rem;
+  color: #344767;
+}
 .text-sm {
   line-height: 1.5;
 }
@@ -26178,7 +26211,8 @@ p,
 
 p {
   line-height: 1.625;
-  font-weight: 300;
+  font-weight: bold;
+  color: #588061; 
 }
 
 .text-sans-serif {
