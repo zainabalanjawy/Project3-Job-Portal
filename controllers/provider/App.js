@@ -1,7 +1,7 @@
 const Application = require('../../models/App')
 exports.provider_get_viwe = async(req,res)=>{
     try {
-        const app = await Application.find()
+        const app = await Application.find({post: [req.query.post]}).populate('user')
         console.log(app)
         res.status(200).json(app)
     } catch (error) {
@@ -9,9 +9,6 @@ exports.provider_get_viwe = async(req,res)=>{
         
     }
 }
-
-
-
 exports.provider_delete_app= async(req,res)=>{
     console.log(req.query.id)
     try {
