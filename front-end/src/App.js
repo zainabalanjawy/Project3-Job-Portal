@@ -149,7 +149,8 @@ export default function App() {
 
 
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
-
+            <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
+            
             <Route path='/seeker/app' element={<AppSeeker/>}/>
 
             <Route path='/provider/app'element={< AppProvider />}  />
