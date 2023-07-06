@@ -13,6 +13,7 @@ exports.seeker_post_view= async (req,res) => {
 
 exports.seeker_applay_app = (req,res) => {
     const app = new App(req.body)
+    app.user[0]=req.query.id
     app.status= "pending"
    app.save()
         .then (()=> {
