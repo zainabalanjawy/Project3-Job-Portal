@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from 'react'
 import {BrowserRouter as Router,Navigate, Route , Routes, Link } from 'react-router-dom'
-
+import logo from './logo.jpeg'; // with import
 import SignUpSeeker from './components/seeker/Signup'
 import SignUpProvider from './components/provider/Signup'
+import About from './components/user/About'
+import Contact from './components/user/Contact'
 import Signin from './components/user/Signin'
 import AppSeeker from './components/seeker/App'
 import AppProvider from './components/provider/App'
@@ -237,7 +239,7 @@ export default function App() {
           <div class="col-md-3 mb-4 ms-auto">
             <div>
               <a href="/">
-                <img src="/logo.jpeg" class="mb-3 footer-logo" alt="main_logo"/>
+                <img src={logo} class="mb-3 footer-logo" alt="main_logo"/>
               </a>
               <h6 class="font-weight-bolder mb-4">iJob</h6>
             </div>
@@ -428,7 +430,7 @@ export default function App() {
           <div class="col-md-3 mb-4 ms-auto">
             <div>
               <a href="/">
-                <img src="/logo.jpeg" class="mb-3 footer-logo" alt="main_logo"/>
+                <img src={logo} class="mb-3 footer-logo" alt="main_logo"/>
               </a>
               <h6 class="font-weight-bolder mb-4">iJob</h6>
             </div>
@@ -504,7 +506,7 @@ export default function App() {
 
   <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
     <div class="container">
-      <a class="navbar-brand  text-white " href="/" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+      <a class="navbar-brand  text-white " href="/" rel="tooltip" title="ijob" data-placement="bottom" target="_blank">
         iJob
       </a>
       <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -517,22 +519,22 @@ export default function App() {
       <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
         <ul class="navbar-nav navbar-nav-hover ms-auto">
           <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-6">
-            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages2" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
+            <a href="/" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages2" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md" >dashboard</i>
               Home
             
             </a>
           </li>
 
           <li class="nav-item dropdown dropdown-hover mx-2">
-            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="/about" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="material-icons opacity-6 me-2 text-md">view_day</i>
               About
             </a>
           </li>
 
           <li class="nav-item dropdown dropdown-hover mx-2">
-            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="/contact" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="material-icons opacity-6 me-2 text-md">article</i>
               Contact
              
@@ -586,6 +588,8 @@ export default function App() {
               <Route path='/seeker/signup' element={<SignUpSeeker register={registerSeekerHandler}/>}/>
               <Route path='/provider/signup' element={<SignUpProvider register={registerProviderHandler}/>}/>
               <Route path='/signin' element={<Signin login={loginHandler}/>}/>
+              <Route path='/about' element={<About />}/>
+              <Route path='/contact' element={<Contact />}/>
           </Routes>
         
         </h2>
@@ -598,7 +602,7 @@ export default function App() {
         <div class="col-md-3 mb-4 ms-auto">
           <div>
             <a href="/">
-              <img src="/logo.jpeg" class="mb-3 footer-logo" alt="main_logo"/>
+              <img src={logo}class="mb-3 footer-logo" alt="main_logo"/>
             </a>
             <h6 class="font-weight-bolder mb-4">iJob</h6>
           </div>
@@ -654,52 +658,3 @@ export default function App() {
 
 
 
-{/* 
-<nav>
-   <div>
-   <Link to="/logout" onClick={logoutHandler}>Logout</Link> &nbsp;
-
-  <Link to="/seeker/home" >Seeker Home</Link> &nbsp;
-   <Link to="/seeker/post/details">Details</Link> &nbsp;
-
-   <Link to="/seeker/app" >seeker App</Link> &nbsp;
-
-   <Link to="/provider/app" >provider App</Link> &nbsp;
-
-   <Link to="/seeker/profile" >seeker Profile</Link> &nbsp;
-
-   <tr></tr>
-   <Link to="/provider/details" >Provider Details</Link> &nbsp;
-   
-   <Link to="/provider/home" >Provider Home</Link> &nbsp;
-   <Link to="/provider/post/add" >Provider Add Post</Link> &nbsp;
-   <Link to="/provider/post/edit" >Provider Edit Post</Link> &nbsp;
-
-   <Link to="/provider/details" >provider Details</Link> &nbsp;
-
-
-   </div>
- </nav>
-<Routes>
-  <Route path='/seeker/home' element={<Home id={user.user.id}/>}/>
-
-  <Route path='/seeker/post/details' element={<DetailsSeeker id={user.user.id}/>}/>
-
-
-  <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
-
-  <Route path='/seeker/app' element={<AppSeeker/>}/>
-
-  <Route path='/provider/app'element={< AppProvider />}  />
-
-  <Route path='/seeker/profile' element={<Profile/>}/>
-  
-
-  <Route path='/provider/details' element={<Details/>}/>
-  <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
-  <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>
-  <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
-
-
-</Routes>
- */}

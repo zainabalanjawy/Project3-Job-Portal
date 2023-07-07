@@ -26215,6 +26215,11 @@ p,
   font-size: 1rem !important;
 }
 
+.img2
+{
+background-color: #e7b5ac;
+background-size: cover;
+} 
 .text-xxs {
   font-size: 0.65rem !important;
 }
