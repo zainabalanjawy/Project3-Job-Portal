@@ -29,20 +29,34 @@ export default function App(props) {
 
   const allApp = app.map((app, index) => {
       return (
-          <div key={index}>
-              <td>{app.post[0].jobTitle}</td>
-              <td>{app.status}</td>
-          
-              <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(app._id)}>Delete
-               </button></td> 
-             
-          </div>
+               <tr key={index}>
+                  <td class="align-middle text-center text-sm">
+                  <h6 class="mb-0 text-xs">{index+1}</h6>
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                 
+                        <h6 class="mb-0 text-xs">{app.post[0].jobTitle}</h6>
+
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                  <h6 class="mb-0 text-xs">{app.status}</h6>
+                    {/* <span class="badge badge-sm badge-success">{app.status}</span> */}
+                  </td>
+ 
+                  <td class="align-middle text-center text-sm">
+                    <button onClick={() => hadleDelete(app._id)} href="javascript:;" class=" font-weight-bold text-xs btn bg-gradient-primary btn-lg" data-toggle="tooltip" data-original-title="Edit user">
+                      DELETE
+                    </button>
+                  </td>
+                </tr>
+
+          // </div>
       )
   })
   return (
     <>
       <h1>Applications</h1>
-      <div className='App'>
+      {/* <div className='App'>
       <table>
         <tr>
             <th>Job Title</th>
@@ -51,12 +65,38 @@ export default function App(props) {
         </tr>
         <tr>
         {allApp}
-        {/* <td>{post.jobTitle}</td> */}
-        {/* <td>{post.Status}</td> */}
+ 
         </tr>
 
       </table>
+      </div> */}
+
+      <section class="pt-5 mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card">
+          <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase  text-xs font-weight-bolder opacity-7">Index</th>
+                  <th class="text-uppercase  text-xs font-weight-bolder opacity-7 ps-2">Job Title</th>
+                  <th class="text-center text-uppercase  text-xs font-weight-bolder opacity-7">Status</th>
+                  <th class="text-center text-uppercase  text-xs font-weight-bolder opacity-7">Delete</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {allApp}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
       
     </>
   )

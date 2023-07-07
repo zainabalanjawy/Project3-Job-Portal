@@ -9526,6 +9526,7 @@ fieldset:disabled .btn {
 
 .mt-4 {
   margin-top: 1.5rem !important;
+  width: 400px
 }
 
 .mt-5 {
@@ -14713,6 +14714,10 @@ fieldset:disabled .btn {
     gap: 3rem !important;
   }
 
+.big-container
+{
+  display: flex;
+}
   .gap-md-6 {
     gap: 4rem !important;
   }
@@ -21224,6 +21229,11 @@ fieldset:disabled .btn {
   padding: 1.5rem;
 }
 
+.card2
+{
+  width: 50% !important;
+}
+
 .card .card-body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   padding: 1.5rem;
@@ -26202,7 +26212,7 @@ p,
 }
 
 .text-xs {
-  font-size: 0.75rem !important;
+  font-size: 1rem !important;
 }
 
 .text-xxs {
