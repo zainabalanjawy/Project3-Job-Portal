@@ -63,7 +63,7 @@ export default function ProviderHome(props) {
                 <h4>{post.jobTitle}</h4>
                 <p>{post.Location}</p>
                 <p>{post.Salary}</p>
-                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/Provider/details', {state: {post}})}>Details</button>
+                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/ProviderDetails', {state: {post}})}>Details</button>
                 {/* <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => deleteHandler(post._id)}>Delete</button> */}
                 {/* <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/post/edit', {state: {post}})}>Edit</button> */}
 
