@@ -4,10 +4,14 @@ import './index.css';
 import './front.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router,Navigate, Route , Routes, Link } from 'react-router-dom'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <Router>
+     <App />
+    </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
