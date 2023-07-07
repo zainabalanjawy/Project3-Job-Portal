@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export default function App(props) {
   const [newProfile, setNewProfile] = useState({});
-
+  const [exist, setExist] = useState(false);
   const changeHandler = (e) => {
     const profile = { ...newProfile };
     profile['user'] = props.id;
@@ -27,7 +27,13 @@ export default function App(props) {
 const getAllApp = async () => {
   const response = await axios.get(`/seeker/profile?id=${props.id}`)
   console.log(response)
+  console.log("exist",exist);
   sectApp(response.data)
+  if(response.data.length == 0)
+  setExist(false)
+  else 
+  setExist(true)
+  
 }
 const allApp = app.map((p, index) => {
   return (
@@ -41,12 +47,15 @@ const allApp = app.map((p, index) => {
       </div>
   )
 })
+
+
+if(!exist)
+{
   return (
     <>
-  
-      <link rel="stylesheet" href="./public/profile.css" />
+      {/* <link rel="stylesheet" href="./public/profile.css" /> */}
       <h1>Profile</h1>
-      {allApp}
+  
       <form encType="multipart/form-data">
         <div>
           <label>Education</label>
@@ -60,9 +69,22 @@ const allApp = app.map((p, index) => {
           
           <input type="hidden" value="cv" onChange={changeHandler} name="CV" className="form-control" />
         </div>
-        <button onClick={addPostHandler} className="Update">Add Profile</button>
+        <button onClick={addPostHandler} class="btn bg-gradient-primary btn-lg" >Add Profile</button>
       </form>
     </>
   )
+}
+
+else 
+{
+  return(
+    <>
+  
+    <link rel="stylesheet" href="./public/profile.css" />
+    <h1>Profile</h1>
+    {allApp}
+  </>
+  )
+}
   }
   

@@ -4,6 +4,7 @@ import React, { useState ,useEffect} from 'react';
 
 export default function AddDetails(props) {
   const [newDetails, setNewDetails] = useState({});
+  const [exist, setExist] = useState(false);
 
   const changeHandler = (e) => {
     const details = { ...newDetails };
@@ -35,6 +36,11 @@ const getAllApp = async () => {
   const response = await axios.get(`/provider/details?id=${props.id}`)
   console.log(response)
   sectApp(response.data)
+  if(response.data.length == 0)
+  setExist(false)
+  else 
+  setExist(true)
+  
 }
 const allApp = app.map((p, index) => {
   return (
@@ -48,9 +54,11 @@ const allApp = app.map((p, index) => {
       </div>
   )
 })
+
+if(!exist)
+{
   return (
     <>
-    {allApp}
       <link rel="stylesheet" href="./public/detalis.css"></link>
       <h1>Details</h1>
       <form encType="multipart/form-data">
@@ -72,8 +80,21 @@ const allApp = app.map((p, index) => {
             className="form-control"
           />
         </div>
-        <input onClick={addPostHandler} className="Edit" type="submit" />
+        <button onClick={addPostHandler} class="btn bg-gradient-primary btn-lg" >Add Profile</button>
       </form>
     </>
   );
+  }
+
+  else 
+{
+  return(
+    <>
+  
+    <link rel="stylesheet" href="./public/profile.css" />
+    <h1>Profile</h1>
+    {allApp}
+  </>
+  )
+}
 }
