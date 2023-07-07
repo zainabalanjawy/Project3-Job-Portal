@@ -58,49 +58,26 @@ export default function ProviderHome(props) {
       }
 
     const allPosts = posts.map((post, index) => {
-        return (
-            <div key={index}>
-                <h4>{post.jobTitle}</h4>
-                <p>{post.Location}</p>
-                <p>{post.Salary}</p>
-                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/ProviderDetails', {state: {post}})}>Details</button>
-                {/* <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => deleteHandler(post._id)}>Delete</button> */}
-                {/* <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/post/edit', {state: {post}})}>Edit</button> */}
-
-           
-                {/* <Details post = {post}/> */}
-                
-
-           
-                {/* <div className="App">
-                    <table>
-                        <tr>
-                            <th>Title</th>
-                            <th>Location</th>
-                            <th>Salary</th>
-                        </tr>
-                        <tr>
-                            <td>{post.jobTitle}</td>
-                            <td>{post.Location}</td>
-                            <td>{post.Salary}</td>
-                      
-                        </tr>
-                    </table>
-                </div> */}
+      return (
+        <div class="col-lg-4 col-md-8">
+        <div class="card" key={index}>
+          <div class="card-body">
+            {/* <img src="../../assets/img/team-2.jpg" alt="..." class="avatar avatar-lg border-radius-lg shadow mt-n5"/> */}
+            <div class="author">
+              <div class="name">
+                <span>{post.jobTitle}</span>
+                <div class="stats">
+                  <small><i class="far fa-clock"></i> {post.Location}</small>
+                </div>
+              </div>
             </div>
-        )
-
-    return (
-        <div key={index}>
-           <h4>{post.jobTitle}</h4>
-            <p>{post.Location}</p>
-            <p>{post.Salary}</p>
-            <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/seeker/post/details', {state: {post}})}>Details
-       
-            </button>  
-
-            </div>
-        )
+            <p class="mt-4">Salary: { post.Salary } BD</p>
+            <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/ProviderDetails', {state: {post}})}>Details
+            </button>
+          </div>
+        </div>
+      </div>
+    )
     })
             
 
@@ -112,20 +89,24 @@ export default function ProviderHome(props) {
      <h1>Provider Home</h1>
      <div class="row text-center py-2 mt-3">
         <div class="col-4 mx-auto">
-            <div class="input-group input-group-static">
+            <div class="input-group input-group-dynamic mb-4">
+      
+      <input class="form-control" placeholder="Search" type="text"onChange={handleInputChange}/>
       {/* <span class="input-group-text">{element}</span> */}
-     
-     <input class="form-control" placeholder="Search" type="text" onChange={handleInputChange}/>
-     <button class="btn bg-gradient-primary btn-lg" onClick={handleSearch}>{element}</button>
+      <button class="btn bg-gradient-primary btn-lg" onClick={handleSearch}>{element}</button>
     </div>
   </div>
 </div>
 
-<div class="row text-center py-2 mt-3">
-  <div class="col-12 mx-auto">
-    {allPosts}
+<section class="py-5">
+  <div class="container">
+    <div class="row mt-6">
+        {allPosts}
+    </div>
+    <hr class="horizontal dark my-5"/>
   </div>
-</div>
+</section>
+
 
     </>
     )

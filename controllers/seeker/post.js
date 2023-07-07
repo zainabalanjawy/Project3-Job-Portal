@@ -3,7 +3,7 @@ const App = require('../../models/App')
 
 exports.seeker_post_view= async (req,res) => {
     try {
-        const posts = await Post.find()
+        const posts = await Post.find().populate('Provider')
         console.log(posts)
         res.status(200).json(posts)
     } catch (err) {

@@ -17,8 +17,8 @@ export default function Details(props) {
     return(
         <>
          <h1>Details</h1>
-         
-<div class="card">
+         <div class="big-container">
+<div class="card card2">
   <div class="card_header">
     <h3 class="card_header__title">{post.jobTitle}</h3>
   </div>
@@ -49,6 +49,40 @@ export default function Details(props) {
     </form>
   
   </div>
+</div>
+<section class="py-4">
+  <div class="container">
+    <div class="row justify-space-between py-2">
+      <div class="col-6 mx-auto">
+        <div class="card shadow-lg mt-4">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+            <a class="d-block blur-shadow-image">
+              <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg"/>
+            </a>
+          </div>
+          <div class="card-body">
+            <h4>{post.Provider[0].fullName}</h4>
+            {/* <p>
+             About
+            </p> */}
+             {/* <p>
+             Location
+            </p> */}
+
+            <h5 class="text-info mb-0">Phone number: +973 {post.Provider[0].phone}</h5>
+            <div class="col-lg-4 col-4">
+                
+              
+              </div>
+            {/* <a href="javascript:;" class="text-primary icon-move-right">More about us
+              <i class="fas fa-arrow-right text-xs ms-1" aria-hidden="true"></i>
+            </a> */}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
 </div>
 </>
     )

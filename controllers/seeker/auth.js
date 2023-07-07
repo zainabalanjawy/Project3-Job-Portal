@@ -8,13 +8,15 @@ exports.signup_get = (req, res) =>{
 exports.signup_post = async (req, res) => {
     try {
         console.log(req.body)
+        console.log("file",req.file)
         const user = new User(req.body)
-
+        //console.log('fileeeeeeenameeeeeeeee', req.filename);
+        console.log('fileeeeeee', req.file.filename);
         const hash = bcrypt.hashSync(req.body.password, 10)
         console.log(hash)
 
         user.password = hash
-        // user.profile_image = "/uploads/" + req.file.filename;
+        user.profile_image = url + '/public/' + req.file.filename
         user.type='seeker'
         await user.save()
 

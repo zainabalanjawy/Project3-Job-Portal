@@ -65,13 +65,6 @@ export default function Home(props) {
                 </button>
               </div>
             </div>
-            {/* <div key={index}>
-               <h4>{post.jobTitle}</h4>
-                <p>{post.Location}</p>
-                <p>{post.Salary}</p>
-                <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/seeker/post/details', {state: {post}})}>Details
-                </button>
-            </div> */}
           </div>
         )
     })
@@ -90,13 +83,6 @@ export default function Home(props) {
     </div>
   </div>
 </div>
-
-{/* <div class="row text-center py-2 mt-3">
-  <div class="col-12 mx-auto">
-    {allPosts}
-  </div>
-</div> */}
-
 <section class="py-5">
   <div class="container">
     <div class="row mt-6">
