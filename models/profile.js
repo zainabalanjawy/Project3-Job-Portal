@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const profileSchema = mongoose.Schema({
     CV : {
         type: String,
-        required: true,
+        
     },
     Edication: {
         type: String,
@@ -12,7 +12,12 @@ const profileSchema = mongoose.Schema({
     Experince: {
         type: String,
         required: true,
-    }
+    },
+    user: [{
+        
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'User'
+ } ]
 })
 
 const Profile = mongoose.model('Profile', profileSchema)

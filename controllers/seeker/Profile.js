@@ -1,4 +1,4 @@
-const Post = require('../../models/profile')
+const Post = require('../../models/Profile')
 
 
 exports.seeker_post_profile = (req,res) => {
@@ -12,13 +12,12 @@ exports.seeker_post_profile = (req,res) => {
             console.log('error has occured', err)
         })
         }
-        exports.seeker_get_profile = (req,res) => {
-            Post.find()
-            .then((posts) => {
+        exports.seeker_get_profile = async(req,res) => {
+            try{
+             const posts=await Post.find({user: [req.query.id]})
                 res.status(200).json(posts)
-                })
-                .catch((err) => {
+            }catch(err){
                     console.log('error has occured', err)
                   }
-                )}
+                }
                 
