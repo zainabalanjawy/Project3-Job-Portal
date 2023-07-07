@@ -17,10 +17,13 @@ import SeekerDetails from './components/seeker/Details'
 
 import ProviderHome from './components/provider/Home'
 import ProviderEditPost from './components/provider/EditPost'
-
 import ProviderAddPost from './components/provider/AddPost'
-import ProviderDetails from './components/provider/ProviderDetails'
+
+
+
+
 import Profile from './components/seeker/Profile'
+import Details from './components/provider/details'
 
 
 
@@ -311,14 +314,16 @@ export default function App() {
           
           {/* <link href="assets/css/material-kit.css?v=3.0.0" rel="stylesheet" /> */}
           </div>
+
           <Router>
-            <Routes>
+          <Routes>
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
-            {/* <Route path='/provider/post/edit' element={<ProviderEditPost/>}/> */}
+            <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
             
             <Route path='/seeker/app' element={<AppSeeker/>}/>
             </Routes>
             </Router>
+          
           <body>
 
         <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">

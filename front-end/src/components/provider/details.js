@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 
 export default function AddDetails(props) {
-  const [newDetails, setNewDetails] = useState({ About: '', Location: '' });
+  const [newDetails, setNewDetails] = useState({});
 
   const changeHandler = (e) => {
     const details = { ...newDetails };
@@ -27,9 +27,30 @@ export default function AddDetails(props) {
         console.log(err);
       });
   };
-
+  const [app, sectApp] = useState([])
+  useEffect(() => {
+    getAllApp()
+}, [])
+const getAllApp = async () => {
+  const response = await axios.get(`/provider/details?id=${props.id}`)
+  console.log(response)
+  sectApp(response.data)
+}
+const allApp = app.map((p, index) => {
+  return (
+      <div key={index}>
+          <td>Education: {p.About}</td><tr></tr>
+          <td>Experiance: {p.Location}</td>
+      
+          {/* <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(app._id)}>Add Profile
+           </button></td>  */}
+         
+      </div>
+  )
+})
   return (
     <>
+    {allApp}
       <link rel="stylesheet" href="./public/detalis.css"></link>
       <h1>Details</h1>
       <form encType="multipart/form-data">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import axios from 'axios'
 //import Profile from '../../../../models/Profile';/
 
@@ -25,26 +25,28 @@ export default function App(props) {
     getAllApp()
 }, [])
 const getAllApp = async () => {
-  const response = await axios.get(`/seeker/profile=${props.id}`)
+  const response = await axios.get(`/seeker/profile?id=${props.id}`)
   console.log(response)
   sectApp(response.data)
 }
-const allApp = profile.map((app, index) => {
+const allApp = app.map((p, index) => {
   return (
       <div key={index}>
-          <td>{profile.post[0].jobTitle}</td>
-          <td>{profile.status}</td>
+          <td>Education: {p.Edication}</td><tr></tr>
+          <td>Experiance: {p.Experince}</td>
       
-          <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(app._id)}>Add Profile
-           </button></td> 
+          {/* <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(app._id)}>Add Profile
+           </button></td>  */}
          
       </div>
   )
 })
   return (
     <>
+  
       <link rel="stylesheet" href="./public/profile.css" />
       <h1>Profile</h1>
+      {allApp}
       <form encType="multipart/form-data">
         <div>
           <label>Education</label>
