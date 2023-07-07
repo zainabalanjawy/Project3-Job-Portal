@@ -16,21 +16,29 @@ export default function App() {
 
 
   const getAllApp = async () => {
-    console.log(app._id);
-      const response = await axios.get(`/provider/app/view?id=${app._id}`)
-      console.log(response)
+    console.log(state.post._id);
+      const response = await axios.get(`/provider/app/view?id=${state.post._id}`)
+      console.log("res",response)
       setApp(response.data)
   }
+
+  const hadleDelete = async (id) => {
+    console.log("id ", id)
+    const response = await axios.post(`/provider/app/delete?id=${id}`)
+    console.log(response)
+   
+}
 
   const allApp = app.map((a, index) => {
       return (
           <div key={index}>
-              <td>{a.post[0].jobTitle}</td>
+              <td>{a.user[0].fullName}</td>
+              <td>{a.cv}</td>
               <td>{a.status}</td>
-{/*           
-              <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(app._id)}>Delete
+          
+              <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(a._id)}>Delete
                </button></td> 
-              */}
+             
           </div>
       )
   })
@@ -40,7 +48,8 @@ export default function App() {
       <div className='App'>
       <table>
         <tr>
-            <th> Applicants</th>
+            <th>Applicant</th>
+            <th>CV</th>
             <th>Status</th>
             <th>Delete</th>
         </tr>
