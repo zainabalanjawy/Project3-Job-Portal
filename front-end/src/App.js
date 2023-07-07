@@ -155,39 +155,34 @@ export default function App() {
                 About
               </a>
             </li> */}
+              
 
             <li class="nav-item mx-2">
-              <Router>
               <Link to="/seeker/home" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                 Home
               </Link>
-              </Router>
             </li>
             <li class="nav-item mx-2">
-              <Router>
               <Link to="/seeker/app" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                 Applications
               </Link>
-              </Router>
             </li>
             <li class="nav-item mx-2">
-              <Router>
               <Link to="/seeker/profile" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                 Profile
               </Link>
-              </Router>
             </li>
 
             <li class="nav-item ms-lg-auto my-auto ms-3 ms-lg-0 mt-2 mt-lg-0">
-          <Router>
           <nav>
             <div>
               <Link class="btn btn-sm  bg-gradient-primary mb-0 me-1 mt-2 mt-md-0" to="/logout" onClick={logoutHandler}>Signout</Link> &nbsp;
             </div>
           </nav>
 
-        </Router>
             </li>
+        
+
           </ul>
         </div>
       </div>
@@ -211,7 +206,7 @@ export default function App() {
         <div class="section text-center">
           {/* COMPONENTS */}
           <h2 class="title">
-            <Router>
+            
           <Routes>
             <Route path='/seeker/home' element={<Home id={user.user.id}/>}/>
 
@@ -228,7 +223,7 @@ export default function App() {
 
             <Route path='/seeker/profile' element={<Profile id={user.user.id}/>}/>
           </Routes>
-          </Router>
+          
           </h2>
         </div>
       </div>
@@ -311,14 +306,14 @@ export default function App() {
           
           {/* <link href="assets/css/material-kit.css?v=3.0.0" rel="stylesheet" /> */}
           </div>
-          <Router>
+          
             <Routes>
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
             {/* <Route path='/provider/post/edit' element={<ProviderEditPost/>}/> */}
             
             <Route path='/seeker/app' element={<AppSeeker/>}/>
             </Routes>
-            </Router>
+            
           <body>
 
         <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
@@ -344,37 +339,37 @@ export default function App() {
             </li> */}
 
             <li class="nav-item mx-2">
-              <Router>
+              
               <Link to="/provider/home" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                 Home
               </Link>
-              </Router>
+              
             </li>
             <li class="nav-item mx-2">
-              <Router>
+              
               <Link to="/provider/post/add" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                 Posts
               </Link>
-              </Router>
+              
             </li>
             <li class="nav-item mx-2">
-              <Router>
+              
               <Link to="/provider/details" class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                 Profile
               </Link>
-              </Router>
+              
             </li>
 
 
             <li class="nav-item ms-lg-auto my-auto ms-3 ms-lg-0 mt-2 mt-lg-0">
-          <Router>
+          
           <nav>
             <div>
               <Link class="btn btn-sm  bg-gradient-primary mb-0 me-1 mt-2 mt-md-0" to="/logout" onClick={logoutHandler}>Signout</Link> &nbsp;
             </div>
           </nav>
 
-        </Router>
+        
             </li>
           </ul>
         </div>
@@ -399,7 +394,7 @@ export default function App() {
         <div class="section text-center">
           {/* COMPONENTS */}
           <h2 class="title">
-            <Router>
+            
           <Routes>
 
             <Route path='/provider/app'element={< AppProvider />}  />
@@ -409,7 +404,7 @@ export default function App() {
             <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
 
           </Routes>
-          </Router>
+          
           </h2>
         </div>
       </div>
@@ -532,14 +527,14 @@ export default function App() {
           </li>
 
           <li class="nav-item ms-lg-auto my-auto ms-3 ms-lg-0 mt-2 mt-lg-0">
-          <Router>
+          
           <nav>
             <div>
               <Link class="btn btn-sm  bg-gradient-primary mb-0 me-1 mt-2 mt-md-0" to="/signin">Signin</Link> &nbsp;
             </div>
           </nav>
 
-        </Router>
+        
             </li>
         </ul>
       </div>
@@ -566,7 +561,7 @@ export default function App() {
         <h2 class="title">
 
 
-        <Router>
+        
           <nav>
             <div>
               <Link class="btn btn-sm  bg-gradient-primary mb-0 me-1 mt-2 mt-md-0" to="/seeker/signup">Signup as Seeker</Link> &nbsp;
@@ -579,7 +574,7 @@ export default function App() {
               <Route path='/provider/signup' element={<SignUpProvider register={registerProviderHandler}/>}/>
               <Route path='/signin' element={<Signin login={loginHandler}/>}/>
           </Routes>
-        </Router>
+        
         </h2>
       </div>
     </div>
@@ -646,7 +641,7 @@ export default function App() {
 
 
 
-{/* <Router>
+{/* 
 <nav>
    <div>
    <Link to="/logout" onClick={logoutHandler}>Logout</Link> &nbsp;
@@ -694,4 +689,4 @@ export default function App() {
 
 
 </Routes>
-</Router> */}
+ */}

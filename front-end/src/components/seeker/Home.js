@@ -83,9 +83,10 @@ export default function Home(props) {
      <div class="row text-center py-2 mt-3">
         <div class="col-4 mx-auto">
             <div class="input-group input-group-dynamic mb-4">
-      <span class="input-group-text">{element}</span>
+      
       <input class="form-control" placeholder="Search" type="text"onChange={handleInputChange}/>
-      <button onClick={handleSearch}>Search</button>
+      {/* <span class="input-group-text">{element}</span> */}
+      <button class="btn bg-gradient-primary btn-lg" onClick={handleSearch}>{element}</button>
     </div>
   </div>
 </div>
