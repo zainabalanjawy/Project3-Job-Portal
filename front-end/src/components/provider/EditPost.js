@@ -1,9 +1,12 @@
 import React, { Component, useState } from 'react'
 import { useLocation, useParams} from 'react-router-dom'
 import axios from 'axios'
+import {BrowserRouter as Router,Navigate, Route , Routes, Link ,useNavigate} from 'react-router-dom'
+
 // import React, { useState } from "react";
 
 export default function EditPost() {
+    const navigate = useNavigate();
     const {state} = useLocation()
     // const {post} = state
     const[job,setJob] = useState(state.post)
@@ -32,7 +35,6 @@ export default function EditPost() {
           const response = await axios.post(
             `provider/post/edit?id=${job._id}`, job
           )
-
           console.log("Updateded successfully!")
         } catch (error) {
           console.log("Something went wrong", error.message)

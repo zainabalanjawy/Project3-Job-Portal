@@ -53,16 +53,16 @@ app.use(function(req, res, next){
 })
 
 // Import our Routes
-const indexRoute = require('./routes/index')
-const appProviderRoute = require('./routes/provider/App')
-const appSeekerRoute = require('./routes/seeker/App')
+// const indexRoute = require('./routes/index')
+// const appProviderRoute = require('./routes/provider/App')
+// const appSeekerRoute = require('./routes/seeker/App')
 
-const ProviderPostRoute = require ('./routes/provider/post')
-const SeekerPostRoute = require('./routes/seeker/post')
+// const ProviderPostRoute = require ('./routes/provider/post')
+// const SeekerPostRoute = require('./routes/seeker/post')
 
-const providerRoute = require('./routes/provider/auth')
-const seekerRoute = require('./routes/seeker/auth')
-const authRoute = require('./routes/auth')
+// const providerRoute = require('./routes/provider/auth')
+// const seekerRoute = require('./routes/seeker/auth')
+// const authRoute = require('./routes/auth')
 
 // Mount our Routes
 app.use('/', indexRoute)
