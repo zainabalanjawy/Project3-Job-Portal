@@ -21234,6 +21234,11 @@ fieldset:disabled .btn {
   width: 50% !important;
 }
 
+.card3
+{
+  width: 100% !important;
+}
+
 .card .card-body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   padding: 1.5rem;

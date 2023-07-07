@@ -56,20 +56,6 @@ export default function App(props) {
   return (
     <>
       <h1>Applications</h1>
-      {/* <div className='App'>
-      <table>
-        <tr>
-            <th>Job Title</th>
-            <th>Status</th>
-            <th>Delete</th>
-        </tr>
-        <tr>
-        {allApp}
- 
-        </tr>
-
-      </table>
-      </div> */}
 
       <section class="pt-5 mt-5">
   <div class="container">

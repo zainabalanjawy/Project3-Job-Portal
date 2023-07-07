@@ -85,7 +85,7 @@ if(!exist)
         <div class="container py-4">
             <div class="row">
             <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
-                <h3 class="text-center">Edit Post</h3>
+                <h3 class="text-center">Edit Profile</h3>
                 <form encType="multipart/form-data" role="form" id="contact-form" method="post" autocomplete="off">
                 <div class="card-body">
                     <h6>Education</h6>
