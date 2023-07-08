@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 
-import {BrowserRouter as Router,Navigate, Route , Routes, Link } from 'react-router-dom'
+import {BrowserRouter as Router,Navigate, Route , Routes, Link, useNavigate} from 'react-router-dom'
 import logo from './logo.jpeg'; // with import
 
 import SignUpSeeker from './components/seeker/Signup'
