@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link,useNavigate } from 'react-
 import { useLocation, useParams} from 'react-router-dom'
 import axios from 'axios';
 import { useState , useEffect} from 'react';
-
+import Edit from '../provider/EditStatus'
 // import { post } from '../../../../routes/provider/App';
 
 export default function App() {
@@ -34,6 +34,7 @@ export default function App() {
 
   const allApp = app.map((a, index) => {
     return (
+      <>
       <tr key={index}>
          <td class="align-middle text-center text-sm">
          <h6 class="mb-0 text-xs">{index+1}</h6>
@@ -53,8 +54,16 @@ export default function App() {
              DELETE
            </button>
          </td>
-       </tr>
 
+         <td class="align-middle text-center text-sm">
+           <button onClick={() => navigate('/provider/status/editstatus',  {state: {app}})} href="javascript:;" class=" font-weight-bold text-xs btn bg-gradient-primary btn-lg" data-toggle="tooltip" data-original-title="Edit user">
+             STATUS
+           </button>
+           
+         </td>
+       </tr>
+      
+       </>
  // </div>
 )
       return (
@@ -101,6 +110,7 @@ export default function App() {
                   <th class="text-uppercase  text-xs font-weight-bolder opacity-7 ps-2">Applicants</th>
                   <th class="text-center text-uppercase  text-xs font-weight-bolder opacity-7">Status</th>
                   <th class="text-center text-uppercase  text-xs font-weight-bolder opacity-7">Delete</th>
+                  <th class="text-center text-uppercase  text-xs font-weight-bolder opacity-7">Edit</th>
                   
                 </tr>
               </thead>
@@ -110,6 +120,7 @@ export default function App() {
             </table>
           </div>
         </div>
+  
       </div>
     </div>
   </div>
