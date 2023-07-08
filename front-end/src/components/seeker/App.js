@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link ,Navigate} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link ,Navigate,useNavigate} from 'react-router-dom'
 
 import axios from 'axios';
 import { useState , useEffect} from 'react';
@@ -24,11 +24,13 @@ export default function App(props) {
     console.log("id ", id)
     const response = await axios.post(`/seeker/app/delete?id=${id}`)
     console.log(response)
+    window.location.reload(false); 
    
 }
 
   const allApp = app.map((app, index) => {
       return (
+
                <tr key={index}>
                   <td class="align-middle text-center text-sm">
                   <h6 class="mb-0 text-xs">{index+1}</h6>
@@ -50,14 +52,11 @@ export default function App(props) {
                   </td>
                 </tr>
 
-          // </div>
+
       )
   })
   return (
-    <>
-      <h1>Applications</h1>
-
-      <section class="pt-5 mt-5">
+  <section class="pt-5 mt-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10">
@@ -84,6 +83,6 @@ export default function App(props) {
   </div>
 </section>
       
-    </>
+
   )
  }

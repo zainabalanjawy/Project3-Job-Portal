@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link,useNavigate } from 'react-router-dom'
 import { useLocation, useParams} from 'react-router-dom'
 import axios from 'axios';
 import { useState , useEffect} from 'react';
@@ -6,8 +6,10 @@ import { useState , useEffect} from 'react';
 // import { post } from '../../../../routes/provider/App';
 
 export default function App() {
+  const navigate = useNavigate()
   const {state} = useLocation()
     const[app,setApp] = useState([])
+    // const {post} = state
     console.log(state.post)
 
     useEffect(() => {
@@ -26,6 +28,7 @@ export default function App() {
     console.log("id ", id)
     const response = await axios.post(`/provider/app/delete?id=${id}`)
     console.log(response)
+    window.location.reload(false); 
    
 }
 
@@ -61,6 +64,8 @@ export default function App() {
               <td>{a.status}</td>
           
               <td><button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => hadleDelete(a._id)}>Delete
+               </button></td> 
+               <td><button type="button" class="btn bg-gradient-primary btn-lg"  onClick={() => navigate('/provider/status/editstatus',  {state: {app}})}>Status
                </button></td> 
              
           </div>
