@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import axios, { all } from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link ,Navigate,useNavigate} from 'react-router-dom'
 
 export default function Details(props) {
+  const navigate = useNavigate();
+    
     // const {post} = useParams()
     const {state} = useLocation()
     const {post} = state
@@ -11,9 +14,9 @@ export default function Details(props) {
      console.log(props.id);
       const response = await axios.post(`/seeker/post/detailes?id=${props.id}`,{post})
       console.log(response)
+      navigate('/seeker/app')
+
   }
-
-
     return(
         <>
          <h1>Details</h1>
@@ -45,7 +48,7 @@ export default function Details(props) {
     <form>
       <input type="hidden" name="post" value={post._id}></input>
       {/* <input type="hidden" name="user" value={props.id}></input> */}
-    <button type="button" class="btn bg-gradient-primary btn-lg" onClick={()=>{handleApply()}}>Apply</button>
+      <button type="button" class="btn bg-gradient-primary btn-lg" onClick={()=>{handleApply()}}>Apply</button>
     </form>
   
   </div>

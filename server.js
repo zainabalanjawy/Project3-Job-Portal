@@ -19,6 +19,7 @@ const authRoute = require('./routes/auth')
 
 const providerDetailsRoute = require ('./routes/provider/Details')
 const SeekerProfileRoute = require('./routes/seeker/Profile')
+const Status = require('./routes/provider/status')
 
 
 //Initialise our app
@@ -78,6 +79,7 @@ app.use('/',appProviderRoute)
 app.use('/',appSeekerRoute)
 app.use('/',providerDetailsRoute)
 app.use('/',SeekerProfileRoute)
+app.use('/', Status)
 
 
 app.listen(PORT, () => {

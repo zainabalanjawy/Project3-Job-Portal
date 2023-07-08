@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import {BrowserRouter as Router,Navigate, Route , Routes, Link } from 'react-router-dom'
+import {BrowserRouter as Router,Navigate, Route , Routes, Link,useNavigate } from 'react-router-dom'
 
 import SignUpSeeker from './components/seeker/Signup'
 import SignUpProvider from './components/provider/Signup'
@@ -25,11 +25,13 @@ import ProviderAddPost from './components/provider/AddPost'
 import Profile from './components/seeker/Profile'
 import Details from './components/provider/details'
 import ProviderDetails from './components/provider/ProviderDetails'
+import Status from './components/provider/EditStatus'
 
 
 export default function App() {
   const [isAuth, setIsAuth] = useState(false)
   const [user,setUser] = useState({})
+  const navigate = useNavigate();
 
   //Create use effect 
   useEffect(()=>{
@@ -78,9 +80,11 @@ export default function App() {
           setIsAuth(true)
           setUser(user)
           if(user.user.type=='provider')
-          return <Navigate to="/provider/home" replace={true} />
+          navigate('/provider/home')
+          // return <Navigate to="/provider/home" replace={true} />
           else
-          return <Navigate to="/seeker/home" replace={true} />
+          navigate('/seeker/home')
+          // return <Navigate to="/seeker/home" replace={true} />
        
         }
        
@@ -217,6 +221,7 @@ export default function App() {
 
 
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
+            <Route path='/provider/status/editstatus' element={<Status/>}/>
 
             <Route path='/seeker/app' element={<AppSeeker id={user.user.id}/>}/>
 
@@ -225,6 +230,8 @@ export default function App() {
 
 
             <Route path='/seeker/profile' element={<Profile id={user.user.id}/>}/>
+
+
           </Routes>
           
           </h2>
@@ -318,9 +325,9 @@ export default function App() {
             <Routes>
 
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
-            <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
             
             <Route path='/seeker/app' element={<AppSeeker/>}/>
+            <Route path='/provider/status/editstatus' element={<Status/>}/>
             </Routes>
 
           
