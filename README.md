@@ -1,7 +1,7 @@
 
 
 # Project3-Job-Portal
-![](/front-end/src/logo.jpeg)
+![]
 
 
 ## Table of contents
@@ -53,7 +53,7 @@
 <hr>
 
 ### Wireframe
-##### A basic design for Jamiyah, it contains account authorization, a process of creating updating and deleting Jamiyah's. viewing and updating user profile. furthermore, account balance can be viewd.
+##### A basic design for Portal jobs " I Job" , containing the process of creating, updating and deleting university jobs. View and update user profile seeker and provider.
 
 ![Wireframe](../Project3-Job-Portal/public/imgs/wireframe.png)
 <br>
@@ -80,99 +80,36 @@
 
 ### Definition
 ##### A graph of definitions where given to the user to declare the idea, which are basicly the main functions of the app. The developer has to logicly declare and apply them.
-##### 1. The user signup then signin to access jamyia. 
-##### 2. The user must create, view, update or delete jamaya if it not started.  
-##### 3. The user must view, update, or delete the account balance. 
-##### 4. The user must view or update his profile. 
+##### 1. The seeker and provider user signup then signin . 
+##### 2. The user must create, view, update or delete there information and post .  
+##### 3. The user must view or update his profile. 
 ##### 5. The user must logout from the system. 
 <br>
 
 ### Functions
 ##### In the controller file, a list of functions where executed, which are:
 ##### 1. Signup, Signin, signout, and forget password. 
-##### 2. Create, update, and delete Jamiyah.
-##### 3. View jamiyah details.
+##### 2. Create, update, and delete Post.
+##### 3. View the Provider details.
 ##### 4. View and edit user profile
-##### 5. View and edit user account balance.
 
 ##### Some of functions where needed to apply a problem-solving strategy like: 
-##### 1. Image uplaod function:
+##### 1. uplaod file function:
 ```sh
- const multer = require('multer');
- var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/uploads/')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + '-' + file.originalname)
-    }
-  })
-  let upload = multer({ storage: storage })
-```
-##### 2. Viewing User history:
-```sh
-const updateEndedJamiyahs = async function () {
-  const jamiyahs = await Jamiyah.find({ isEnded: false });
-  const now = new Date();
-  for (const jamiyah of jamiyahs) {
-    if (jamiyah.endDate <= now) {
-      jamiyah.isEnded = true;
-      await History.create({
-        jamiyah: jamiyah._id,
-        endDate: jamiyah.endDate,
-      });
-      await jamiyah.save();
-    }
-  }
-};
 ```
 
-##### 3. Show participants turn in each months:
-```sh
-<ul class="timeline" name="participants">
-    <% jamiyah.participants.forEach(a => {%>
-        <% month++ %>
-        <% users.forEach(b => {%>
-        <% if(a.equals(b._id)) { %>
-            <% if(today+1 === month) { %>
-        <li class="selected" value="<%= b._id %>" data-year=<%=month.toString() %>  data-text="<%= b.name %>"></li>
-        <%} else{%>
-        <li value="<%= b._id %>" data-year=<%=month.toString() %>  data-text="<%= b.name %>"></li>
-    <%}}}) %>
-        <%}) %>
-</ul>
-```
-##### 4. To take user ID from http query: 
-```sh
-const jamiyah = await Jamiyah.findById(req.query.id);
-```
 
-##### 5. Unique Random generator for a unique security code: 
-```sh
-exports.signUpPage = (req, res) => {
-  const securityCode = generateRandomSecurityCode();
-  res.render(“auth/signup”, {
-    securityCode: securityCode,
-  });
-};
-```
 ### Screenshots
 ## Futurework and Unsolved problems
 <hr>
 
-##### 1. Implement A Payment Gateway, and automatic payments.   
-##### 2. Alerts to inform when actions succeed or fail.
-##### 3. Add a search bar. 
-##### 4. Handling Edge Cases on things like duration or amount inputs. 
-##### 5. Make adding participants with an invite to give the choice of accepting or reclining the Jamiyah.
-
-##### 6. Move the jamyiah from current to history if it ended. 
-<br>
-
+##### 1. upload an image into the portal when I signup.  
+##### 2. view notifications of any status update.
+##### 3. filter job posts.
 
 ## Resources
-#### 1.[Wireframes](https://www.figma.com/file/ryh9pajPnMzCKzE1cepPZS/Untitled?type=design&node-id=0%3A1&mode=design&t=z7Qk6oRSnDuLQJ7b-1)
+#### 1.[Wireframes](https://www.figma.com/file/ryh9pajPnMzCKzE1cepPZS/Untitled?type=design&node-id=0-1&mode=design&t=QhAj3aga6UIG4zNj-0)
 
-#### 2.[User Stories](https://trello.com/invite/b/HPEum51X/ATTIf96895f9f13ff28564e4acef85894186F1CB6DC3/project3job-portal)
+#### 2.[User Stories](https://trello.com/b/HPEum51X/project3job-portal)
 
 #### 3.[Deployed Application](https://trello.com/invite/b/T3Wmjld3/ATTI56029954509c17209bff882e97906a644B96B25A/project02)
