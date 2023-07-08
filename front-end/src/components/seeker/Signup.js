@@ -33,7 +33,7 @@ export default function Signup(props) {
     <div class="row text-center py-3 mt-3">
       <div class="col-lg-7 mx-auto">
         <h3 class="text-center">Signup As Seeker</h3>
-        <form role="form" id="contact-form" method="post" autocomplete="off">
+        <form enctype="multipart/form-data" role="form" id="contact-form" method="post" autocomplete="off">
           <div class="card-body">
             <div class="mb-4">
               <div class="input-group input-group-static">
@@ -63,6 +63,12 @@ export default function Signup(props) {
               <div class="input-group input-group-static">
                 <label>Password</label>
                 <input type="password"  onChange={changeHandler} name="password" class="form-control"/>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="input-group input-group-static">
+                <label>Profile image</label>
+                <input type="file"  onChange={changeHandler} name="profileImg" class="form-control"/>
               </div>
             </div>
 

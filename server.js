@@ -3,8 +3,7 @@ const mongoose = require('mongoose')
 const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
 const passport = require('./lib/passportConfig')
-
-
+const bodyParser = require('body-parser');
 // Import our Routes
 const indexRoute = require('./routes/index')
 const appProviderRoute = require('./routes/provider/App')
@@ -24,6 +23,10 @@ const Status = require('./routes/provider/status')
 
 //Initialise our app
 const app = express()
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(express.json())
 
 
@@ -33,11 +36,11 @@ const PORT = 4006
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
 
-app.use(express.static('public'))
+app.use('/public', express.static('public'));
 
-app.use(express.urlencoded({
-    extended: true
-}))
+// app.use(express.urlencoded({
+//     extended: true
+// }))
 
 app.use(session({
     secret: 'Thisisasecret!',
