@@ -30,7 +30,7 @@ export default function ProviderDetails(props) {
    return(
        <>
          <h1>Details</h1>
-         <div class="big-container">
+<div class="big-container">
 <div class="card card3">
   <div class="card_header">
     <h3 class="card_header__title">{post.jobTitle}</h3>
@@ -56,9 +56,9 @@ export default function ProviderDetails(props) {
   </div>
   <div class="card_button">
 
-     <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => deleteHandler(post._id)}>Delete</button>
-   <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/post/edit', {state: {post}})}>Edit</button>
-   <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/app', {state: {post}})}>View Applicants</button>
+     <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => deleteHandler(post._id)}>Delete</button>&nbsp;&nbsp;&nbsp;
+   <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/post/edit', {state: {post}})}>Edit</button>&nbsp;&nbsp;&nbsp;
+   <button type="button" class="btn bg-gradient-primary btn-lg" onClick={() => navigate('/provider/app', {state: {post}})}>View Applicants</button>&nbsp;&nbsp;&nbsp;
 
   
   </div>
