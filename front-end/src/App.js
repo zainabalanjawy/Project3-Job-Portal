@@ -129,8 +129,7 @@ export default function App() {
         <>
         <div>
           <div>
-          <title>Hello, world!</title>
-          
+          <title>Hello, world!</title>  
           <meta charSet="utf-8"/>
           <meta content="width=device-width, initial-scale=1.0" name="viewport" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -144,7 +143,6 @@ export default function App() {
           </div>
 
           <body>
-
         <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
           <div class="container">
             <a class="navbar-brand  text-white " href="/" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
@@ -225,7 +223,7 @@ export default function App() {
 
 
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
-            <Route path='/provider/status/editstatus' element={<Status/>}/>
+            {/* <Route path='/provider/status/editstatus' element={<Status/>}/> */}
 
             <Route path='/seeker/app' element={<AppSeeker id={user.user.id}/>}/>
 
@@ -331,7 +329,7 @@ export default function App() {
             <Route path='/seeker/post/details' element={<SeekerDetails/>}/>
             
             <Route path='/seeker/app' element={<AppSeeker/>}/>
-            <Route path='/provider/status/editstatus' element={<Status/>}/>
+            {/* <Route path='/provider/status/editstatus' element={<Status/>}/> */}
             </Routes>
 
           
@@ -426,6 +424,7 @@ export default function App() {
             <Route path='/provider/home' element={<ProviderHome id={user.user.id}/>}/>
             <Route path='/provider/post/add' element={<ProviderAddPost addPost={addPostHandler} id={user.user.id}/>}/>
             <Route path='/provider/post/edit' element={<ProviderEditPost/>}/>
+             <Route path='/provider/status/editstatus' element={<Status/>}/>
 
           </Routes>
           

@@ -27997,4 +27997,16 @@ pre[class*="language-"] {
   }
 }
 
+.recived {
+  background-color: #588061 !important;
+}
+
+.processing{
+  background-color: #FDE9EA !important;
+}
+
+.reject{
+  background-color: #b71c1c !important;
+}
+
 /*# sourceMappingURL=kit-free.css.map */
