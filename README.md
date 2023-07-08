@@ -53,7 +53,7 @@
 <hr>
 
 ### Wireframe
-##### A basic design for I Job, it contains account authorization, a process of creating updating and deleting Jamiyah's. viewing and updating user profile. furthermore, account balance can be viewd.
+##### A basic design for Portal jobs " I Job" , containing the process of creating, updating and deleting university jobs. View and update user profile seeker and provider.
 
 ![Wireframe](../Project3-Job-Portal/public/imgs/wireframe.png)
 <br>
@@ -80,10 +80,9 @@
 
 ### Definition
 ##### A graph of definitions where given to the user to declare the idea, which are basicly the main functions of the app. The developer has to logicly declare and apply them.
-##### 1. The user signup then signin to access jamyia. 
-##### 2. The user must create, view, update or delete jamaya if it not started.  
-##### 3. The user must view, update, or delete the account balance. 
-##### 4. The user must view or update his profile. 
+##### 1. The seeker and provider user signup then signin . 
+##### 2. The user must create, view, update or delete there information and post .  
+##### 3. The user must view or update his profile. 
 ##### 5. The user must logout from the system. 
 <br>
 
