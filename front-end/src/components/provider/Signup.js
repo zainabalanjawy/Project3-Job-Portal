@@ -28,7 +28,7 @@ export default function Signup(props) {
 
   return (
     <>
-    <section>
+  <section>
   <div class="container py-4">
     <div class="row text-center py-3 mt-3">
       <div class="col-lg-7 mx-auto">

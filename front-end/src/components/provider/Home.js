@@ -93,7 +93,7 @@ export default function ProviderHome(props) {
       
       <input class="form-control" placeholder="Search" type="text"onChange={handleInputChange}/>
       {/* <span class="input-group-text">{element}</span> */}
-      <button class="btn bg-gradient-primary btn-lg" onClick={handleSearch}>{element}</button>
+      <button class="btn bg-gradient-primary btn-lg " onClick={handleSearch}>{element}</button>
     </div>
   </div>
 </div>

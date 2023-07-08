@@ -11,6 +11,7 @@ export default function EditPost() {
     // const {post} = state
     const[job,setJob] = useState(state.post)
     console.log(state.post)
+    
 
     const handleChange = event => {
         const editJob = {...job}
@@ -27,7 +28,6 @@ export default function EditPost() {
     const EidtHandler = async (job) => {
         try {
             job.newId = job._id;
-
             console.log("Job---",job);
             console.log("Job---",job._id);
             // console.log("job",job);
