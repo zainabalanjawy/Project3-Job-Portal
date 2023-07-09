@@ -56,20 +56,20 @@
 ### Wireframe
 ##### A basic design for Portal jobs " I Job" , containing the process of creating, updating and deleting jobs. View and update user profile seeker and provider.
 
-![Wireframe](../Project3-Job-Portal/front-end/src/wireframe.png)
+![Wireframe](/front-end/src/wireframe.png)
 <br>
 <br>
 
 ### UserStories
 ##### A user story is a general explanation of functionalities written from the perspective of the user. It moves through differnt process till it reach to the testing and the deployment part. 
 
-![userstories](../Project3-Job-Portal/front-end/src/userstories.png)
+![userstories](/front-end/src/userstories.png)
 <br>
 
 ### ERD
 ##### An Entity Relationship Digram shows main entities that used inside the portal, fields realted to each one of them and the relationship between these entities. 
 
-![userstories](../Project3-Job-Portal/front-end/src/erd.png)
+![userstories](/front-end/src/erd.png)
 <br>
 
 ### Planning
@@ -150,7 +150,7 @@ upload = multer({ storage: storage })
 
 
 ### Screenshots
-![Wireframe](../Project3-Job-Portal/front-end/src/screenshots.png)
+![Wireframe](/front-end/src/screenshots.png)
 <br>
 ## Futurework and Unsolved problems
 <hr>
