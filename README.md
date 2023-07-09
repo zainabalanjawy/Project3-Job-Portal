@@ -1,7 +1,7 @@
 
 
 # Project3-Job-Portal
-![../Project3-Job-Portal/front-end/src/logo.jpeg]
+![Logo](../Project3-Job-Portal/front-end/src/logo.jpeg)
 
 
 ## Table of contents
