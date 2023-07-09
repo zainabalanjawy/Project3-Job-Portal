@@ -126,9 +126,7 @@ function handleSearch() {
       }
 ```
 
-```sh
-"proxy": "http://localhost:4006/>
-```
+
 
 ##### 4. uplaod file function using multer:
 ```sh
