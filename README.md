@@ -89,7 +89,7 @@
 
 ### Functions
 ##### In the controller file, a list of functions where executed, which are:
-##### 1. Signup, Signin, signout, and forget password. 
+##### 1. Signup, Signin and signout.
 ##### 2. Create, update, and delete Post.
 ##### 3. View the Provider details.
 ##### 4. View and edit user profile
