@@ -46,33 +46,34 @@
 
 ##### 6. <img src="https://blog.openreplay.com/images/why-should-you-use-material-ui/images/hero.png" width="100px" height="40px" >
 
-##### 7. ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+##### 7.![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) 
+##### 8. ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
 ## Design
 <hr>
 
 ### Wireframe
-##### A basic design for Portal jobs " I Job" , containing the process of creating, updating and deleting university jobs. View and update user profile seeker and provider.
+##### A basic design for Portal jobs " I Job" , containing the process of creating, updating and deleting jobs. View and update user profile seeker and provider.
 
-![Wireframe](../Project3-Job-Portal/public/imgs/wireframe.png)
+![Wireframe](../Project3-Job-Portal/front-end/src/wireframe.png)
 <br>
 <br>
 
 ### UserStories
 ##### A user story is a general explanation of functionalities written from the perspective of the user. It moves through differnt process till it reach to the testing and the deployment part. 
 
-![userstories](../Project3-Job-Portal/public/imgs/userstories.png)
+![userstories](../Project3-Job-Portal/front-end/src/userstories.png)
 <br>
 
 ### ERD
-##### A user story is a general explanation of functionalities written from the perspective of the user. It moves through differnt process till it reach to the testing and the deployment part. 
+##### An Entity Relationship Digram shows main entities that used inside the portal, fields realted to each one of them and the relationship between these entities. 
 
-![userstories](../Project3-Job-Portal/public/imgs/ERD.png)
+![userstories](../Project3-Job-Portal/front-end/src/erd.png)
 <br>
 
 ### Planning
-##### The planning part started with structure the components needed for the views and controllers file. Then, a list of css properties where applied for each of the elements declered in the views and controllers file. Finally, it ended with the logical part, which is applying the functions on the elements declered. 
+##### The planning part started with structure the components needed for the views and controllers file. Then,each of the functionalites where tested in Postman. Finally, it ended with the frontend part where a list of components where declared and applying http request on their parts. 
 <br>
 
 ## Development
@@ -83,7 +84,7 @@
 ##### 1. The seeker and provider user signup then signin . 
 ##### 2. The user must create, view, update or delete there information and post .  
 ##### 3. The user must view or update his profile. 
-##### 5. The user must logout from the system. 
+##### 4. The user must logout from the system. 
 <br>
 
 ### Functions
@@ -94,12 +95,63 @@
 ##### 4. View and edit user profile
 
 ##### Some of functions where needed to apply a problem-solving strategy like: 
-##### 1. uplaod file function:
+
+##### 1. Applying icons using fontawsome package
+
 ```sh
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+const element = <FontAwesomeIcon icon={faSearch} />
+```
+
+##### 2. Using Proxy to change path of axios to Backend
+
+```sh
+"proxy": "http://localhost:4006/>
+```
+
+##### 3. Search function using 'Filter'
+```sh
+const [inputValue, setInputValue] = useState('');
+
+function handleSearch() {
+        if (inputValue.length > 0) {
+            const filtered_posts = posts.filter((p) => {
+            return p.jobTitle.match(inputValue);
+        });
+        setPosts(filtered_posts)
+        console.log(filtered_posts);
+        }
+        //props.onSearch(inputValue);
+      }
+```
+
+```sh
+"proxy": "http://localhost:4006/>
+```
+
+##### 4. uplaod file function using multer:
+```sh
+const multer  = require('multer')
+//let upload = multer({ dest: 'uploads/' })
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '/uploads')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
+
+upload = multer({ storage: storage })
 ```
 
 
 ### Screenshots
+![Wireframe](../Project3-Job-Portal/front-end/src/screenshots.png)
+<br>
 ## Futurework and Unsolved problems
 <hr>
 
@@ -111,5 +163,7 @@
 #### 1.[Wireframes](https://www.figma.com/file/ryh9pajPnMzCKzE1cepPZS/Untitled?type=design&node-id=0-1&mode=design&t=QhAj3aga6UIG4zNj-0)
 
 #### 2.[User Stories](https://trello.com/b/HPEum51X/project3job-portal)
+
+#### 3.[ERD](https://app.diagrams.net/#G12ohiY2fvvATiot3XUlsMdkCZLv68dPjF)
 
 #### 3.[Deployed Application](https://trello.com/invite/b/T3Wmjld3/ATTI56029954509c17209bff882e97906a644B96B25A/project02)

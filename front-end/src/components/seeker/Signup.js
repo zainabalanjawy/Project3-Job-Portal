@@ -65,12 +65,12 @@ export default function Signup(props) {
                 <input type="password"  onChange={changeHandler} name="password" class="form-control"/>
               </div>
             </div>
-            <div class="mb-4">
+            {/* <div class="mb-4">
               <div class="input-group input-group-static">
                 <label>Profile image</label>
                 <input type="file"  onChange={changeHandler} name="profileImg" class="form-control"/>
               </div>
-            </div>
+            </div> */}
 
             <div class="row">
               <div class="col-md-12">
