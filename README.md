@@ -164,4 +164,4 @@ upload = multer({ storage: storage })
 
 #### 3.[ERD](https://app.diagrams.net/#G12ohiY2fvvATiot3XUlsMdkCZLv68dPjF)
 
-#### 3.[Deployed Application]([https://ijob.onrender.com/)])
+#### 3.[Deployed Application](https://ijob.onrender.com/))
