@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const expressLayouts = require('express-ejs-layouts')
@@ -88,8 +89,7 @@ app.use('/', Status)
 app.listen(PORT, () => {
     console.log(`The Job portal is open on port ${PORT}`)
 })
-
-mongoose.connect('mongodb://127.0.0.1:27017/jobPortal',
+mongoose.connect(process.env.DB,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
