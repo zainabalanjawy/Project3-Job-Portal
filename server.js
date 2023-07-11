@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
 const expressLayouts = require('express-ejs-layouts')
@@ -68,6 +69,11 @@ app.use(function(req, res, next){
 // const providerRoute = require('./routes/provider/auth')
 // const seekerRoute = require('./routes/seeker/auth')
 // const authRoute = require('./routes/auth')
+
+const buildPath = path.join(__dirname, 'build')
+
+
+app.use(express.static(buildPath))
 
 // Mount our Routes
 app.use('/', indexRoute)
